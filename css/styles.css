@@ -224,6 +224,7 @@ h1,h2,h3{font-family:var(--serif);line-height:1.15;margin:0 0 .4em}
   .menu-item{gap:10px;padding:10px 0;font-size:.94rem}
   .menu-item .rate{font-size:.9rem}
   .section{padding:52px 0}
+  .section.menu-content{padding-left:18px;padding-right:18px}
   .usp .container{grid-template-columns:1fr}
   .showcase{grid-template-columns:1fr}
   .gallery{column-count:1}
