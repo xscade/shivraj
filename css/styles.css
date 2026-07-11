@@ -1,0 +1,198 @@
+/* Hotel Shivraj — Family Restaurant, Vadgaon (Maval), Pune
+   Palette derived from the brand brochure: deep maroon + royal gold + cream */
+:root{
+  --maroon:#6d0f14;
+  --maroon-dark:#4c0a0d;
+  --maroon-soft:#8a1319;
+  --gold:#e6a70c;
+  --gold-bright:#f6bd1c;
+  --gold-soft:#f7d67a;
+  --cream:#fdf6e9;
+  --cream-2:#f6ebd7;
+  --ink:#2b1a12;
+  --ink-soft:#5b4a3f;
+  --white:#ffffff;
+  --radius:16px;
+  --shadow:0 10px 30px rgba(76,10,13,.12);
+  --shadow-lg:0 20px 50px rgba(76,10,13,.22);
+  --maxw:1160px;
+  --serif:"Playfair Display",Georgia,"Times New Roman",serif;
+  --sans:"Poppins",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;font-family:var(--sans);color:var(--ink);
+  background:var(--cream);line-height:1.6;-webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{font-family:var(--serif);line-height:1.15;margin:0 0 .4em}
+.container{max-width:var(--maxw);margin:0 auto;padding:0 20px}
+.section{padding:76px 0}
+.section--tint{background:linear-gradient(180deg,#fff8ec, #fdf6e9)}
+.section--maroon{background:radial-gradient(120% 120% at 50% 0%,var(--maroon-soft),var(--maroon) 60%,var(--maroon-dark));color:#fbeecb}
+.eyebrow{
+  display:inline-block;font-weight:600;letter-spacing:.22em;text-transform:uppercase;
+  font-size:.72rem;color:var(--maroon);background:var(--gold-soft);
+  padding:.4em .9em;border-radius:999px;margin-bottom:14px;
+}
+.section--maroon .eyebrow{color:var(--maroon-dark);background:var(--gold-bright)}
+.section-head{text-align:center;max-width:720px;margin:0 auto 46px}
+.section-head h2{font-size:clamp(1.9rem,4vw,2.9rem);color:var(--maroon)}
+.section--maroon .section-head h2{color:var(--gold-bright)}
+.section-head p{color:var(--ink-soft);font-size:1.05rem}
+.section--maroon .section-head p{color:#f3e2bf}
+
+/* Buttons */
+.btn{
+  display:inline-flex;align-items:center;gap:.5em;font-weight:600;font-family:var(--sans);
+  padding:.85em 1.6em;border-radius:999px;cursor:pointer;border:2px solid transparent;
+  transition:transform .15s ease,box-shadow .15s ease,background .15s ease;font-size:.98rem;
+}
+.btn:hover{transform:translateY(-2px)}
+.btn--gold{background:linear-gradient(135deg,var(--gold-bright),var(--gold));color:var(--maroon-dark);box-shadow:0 8px 22px rgba(230,167,12,.4)}
+.btn--maroon{background:var(--maroon);color:var(--gold-bright)}
+.btn--ghost{background:transparent;border-color:var(--gold-bright);color:var(--gold-bright)}
+.btn--outline{background:#fff;border-color:var(--maroon);color:var(--maroon)}
+
+/* Header */
+.site-header{position:sticky;top:0;z-index:50;background:rgba(253,246,233,.92);backdrop-filter:blur(10px);border-bottom:1px solid #eaddc3}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:10px 20px;max-width:var(--maxw);margin:0 auto}
+.brand{display:flex;align-items:center;gap:12px}
+.brand img{width:52px;height:52px;border-radius:50%;box-shadow:var(--shadow)}
+.brand b{font-family:var(--serif);font-size:1.15rem;color:var(--maroon);display:block;line-height:1}
+.brand span{font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold)}
+.nav-links{display:flex;align-items:center;gap:26px}
+.nav-links a{font-weight:500;font-size:.95rem;color:var(--ink);transition:color .15s}
+.nav-links a:hover{color:var(--maroon)}
+.nav-cta{display:flex;gap:10px;align-items:center}
+.nav-toggle{display:none;background:none;border:0;font-size:1.6rem;color:var(--maroon);cursor:pointer}
+
+/* Hero */
+.hero{position:relative;color:#fff;overflow:hidden}
+.hero__bg{position:absolute;inset:0;background-size:cover;background-position:center;filter:brightness(.55)}
+.hero__overlay{position:absolute;inset:0;background:linear-gradient(120deg,rgba(76,10,13,.86),rgba(76,10,13,.5) 55%,rgba(43,26,18,.35))}
+.hero__inner{position:relative;max-width:var(--maxw);margin:0 auto;padding:96px 20px 104px}
+.hero__badge{display:inline-flex;gap:.5em;align-items:center;background:rgba(246,189,28,.16);border:1px solid var(--gold-bright);color:var(--gold-bright);padding:.45em 1em;border-radius:999px;font-size:.8rem;font-weight:600;letter-spacing:.05em;margin-bottom:18px}
+.hero h1{font-size:clamp(2.4rem,6vw,4.4rem);color:#fff;max-width:16ch}
+.hero h1 em{color:var(--gold-bright);font-style:normal}
+.hero p.lead{font-size:clamp(1.05rem,2.2vw,1.3rem);max-width:52ch;color:#f4e6c8;margin-bottom:28px}
+.hero__cta{display:flex;flex-wrap:wrap;gap:14px}
+.hero__meta{display:flex;flex-wrap:wrap;gap:22px 34px;margin-top:38px;font-size:.95rem;color:#f0e2c4}
+.hero__meta div{display:flex;align-items:center;gap:.55em}
+.hero__meta b{color:var(--gold-bright);font-weight:600}
+
+/* Feature strip */
+.usp{background:var(--maroon);color:#f7e7c3}
+.usp .container{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;padding-top:26px;padding-bottom:26px}
+.usp .item{display:flex;gap:12px;align-items:center;justify-content:center;text-align:left}
+.usp .ico{font-size:1.7rem}
+.usp b{display:block;color:var(--gold-bright);font-size:1.02rem;font-family:var(--serif)}
+.usp small{color:#e9d4a6}
+
+/* Challenge banner */
+.challenge{position:relative;overflow:hidden}
+.challenge .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:center}
+.challenge img{border-radius:var(--radius);box-shadow:var(--shadow-lg);width:100%;height:100%;object-fit:cover;max-height:460px}
+.challenge .prize{font-family:var(--serif);font-size:clamp(2.4rem,6vw,3.8rem);color:var(--gold-bright);line-height:1}
+.challenge ul{list-style:none;padding:0;margin:18px 0 26px;display:grid;gap:10px}
+.challenge li{display:flex;gap:.6em;align-items:flex-start}
+.challenge li::before{content:"✦";color:var(--gold-bright)}
+
+/* Thali cards */
+.thali-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:22px}
+.thali-card{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;border:1px solid #f0e2c9;transition:transform .18s ease,box-shadow .18s ease;display:flex;flex-direction:column}
+.thali-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg)}
+.thali-card .body{padding:20px 20px 22px;display:flex;flex-direction:column;flex:1}
+.thali-card h3{color:var(--maroon);font-size:1.25rem;margin-bottom:4px}
+.thali-card .serves{font-size:.78rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+.thali-card p{font-size:.9rem;color:var(--ink-soft);margin:0 0 16px;flex:1}
+.thali-card .price{font-family:var(--serif);font-size:1.4rem;color:var(--maroon);font-weight:700}
+.thali-card .price small{font-size:.8rem;color:var(--ink-soft);font-weight:400}
+.thali-card.feature{border:2px solid var(--gold-bright)}
+.tag{display:inline-block;background:var(--maroon);color:var(--gold-bright);font-size:.68rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:.3em .7em;border-radius:999px}
+
+/* Specials showcase */
+.showcase{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.showcase figure{margin:0;position:relative;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+.showcase img{aspect-ratio:4/3;object-fit:cover;width:100%;transition:transform .4s ease}
+.showcase figure:hover img{transform:scale(1.06)}
+.showcase figcaption{position:absolute;left:0;right:0;bottom:0;padding:16px;background:linear-gradient(0deg,rgba(43,10,13,.9),transparent);color:#fff;font-family:var(--serif);font-size:1.15rem}
+
+/* Gallery */
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:180px;gap:14px}
+.gallery a{overflow:hidden;border-radius:12px;box-shadow:var(--shadow)}
+.gallery img{width:100%;height:100%;object-fit:cover;transition:transform .4s ease}
+.gallery a:hover img{transform:scale(1.08)}
+.gallery .tall{grid-row:span 2}
+.gallery .wide{grid-column:span 2}
+
+/* Menu page */
+.menu-hero{background:var(--maroon);color:#f7e7c3;text-align:center;padding:60px 20px 54px}
+.menu-hero h1{color:var(--gold-bright);font-size:clamp(2rem,5vw,3.2rem)}
+.menu-nav{position:sticky;top:73px;z-index:30;background:var(--cream);border-bottom:1px solid #ecdcbf;padding:12px 0}
+.menu-nav .container{display:flex;gap:10px;overflow-x:auto;scrollbar-width:none}
+.menu-nav .container::-webkit-scrollbar{display:none}
+.menu-nav a{white-space:nowrap;font-size:.86rem;font-weight:500;padding:.45em 1em;border-radius:999px;background:#fff;border:1px solid #ecdcbf;color:var(--maroon)}
+.menu-nav a:hover{background:var(--maroon);color:var(--gold-bright)}
+.menu-block{margin-bottom:14px}
+.menu-block h2{color:var(--maroon);font-size:1.7rem;border-bottom:2px solid var(--gold-soft);padding-bottom:10px;margin-bottom:8px;display:flex;align-items:center;gap:.5em}
+.menu-cols{columns:2;column-gap:48px}
+.menu-item{break-inside:avoid;display:flex;justify-content:space-between;gap:14px;padding:9px 0;border-bottom:1px dashed #e7d9bf}
+.menu-item .name{font-weight:500}
+.menu-item .name small{display:block;font-weight:400;font-size:.8rem;color:var(--ink-soft)}
+.menu-item .rate{font-weight:600;color:var(--maroon);white-space:nowrap;font-variant-numeric:tabular-nums}
+.menu-note{text-align:center;color:var(--ink-soft);font-size:.85rem;margin-top:26px;font-style:italic}
+.veg-flag,.nonveg-flag{display:inline-block;width:.85em;height:.85em;border:1.5px solid;border-radius:3px;position:relative;vertical-align:middle}
+.veg-flag{border-color:#2e7d32}.veg-flag::after{content:"";position:absolute;inset:2px;background:#2e7d32;border-radius:50%}
+.nonveg-flag{border-color:#b3261e}.nonveg-flag::after{content:"";position:absolute;inset:2px;background:#b3261e;border-radius:50%}
+
+/* Location */
+.location .wrap{display:grid;grid-template-columns:1fr 1fr;gap:0;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-lg);background:#fff}
+.location .info{padding:40px}
+.location .info h2{color:var(--maroon);font-size:2rem}
+.location .row{display:flex;gap:14px;align-items:flex-start;padding:14px 0;border-bottom:1px solid #f0e5cf}
+.location .row .ico{font-size:1.3rem;color:var(--maroon)}
+.location .row b{display:block;color:var(--ink)}
+.location .row span{color:var(--ink-soft);font-size:.94rem}
+.location .map{min-height:100%}
+.location .map iframe{width:100%;height:100%;min-height:420px;border:0;display:block}
+
+/* Footer */
+.site-footer{background:var(--maroon-dark);color:#e9d4a6;padding:56px 0 26px}
+.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:36px}
+.site-footer h4{font-family:var(--serif);color:var(--gold-bright);font-size:1.2rem;margin:0 0 14px}
+.site-footer a{color:#e9d4a6}.site-footer a:hover{color:var(--gold-bright)}
+.site-footer ul{list-style:none;padding:0;margin:0;display:grid;gap:9px;font-size:.94rem}
+.footer-brand{display:flex;gap:14px;align-items:center;margin-bottom:14px}
+.footer-brand img{width:64px;height:64px;border-radius:50%}
+.socials{display:flex;gap:12px;margin-top:16px}
+.socials a{width:42px;height:42px;border-radius:50%;background:rgba(246,189,28,.14);display:grid;place-items:center;font-size:1.1rem;transition:background .15s}
+.socials a:hover{background:var(--gold-bright)}
+.footer-bottom{border-top:1px solid rgba(246,189,28,.2);margin-top:40px;padding-top:20px;text-align:center;font-size:.85rem;color:#c7ab78}
+
+/* Floating call button (mobile ads) */
+.fab{position:fixed;right:18px;bottom:18px;z-index:60;display:none;gap:10px}
+.fab a{width:56px;height:56px;border-radius:50%;display:grid;place-items:center;box-shadow:var(--shadow-lg);font-size:1.5rem}
+.fab .call{background:var(--maroon);color:var(--gold-bright)}
+.fab .wa{background:#25d366;color:#fff}
+
+@media(max-width:900px){
+  .nav-links,.nav-cta .btn--outline{display:none}
+  .nav-toggle{display:block}
+  .nav-links.open{display:flex;position:absolute;top:72px;left:0;right:0;flex-direction:column;background:var(--cream);padding:18px 20px;gap:14px;border-bottom:1px solid #eaddc3}
+  .usp .container{grid-template-columns:repeat(2,1fr)}
+  .challenge .wrap,.location .wrap{grid-template-columns:1fr}
+  .showcase{grid-template-columns:1fr 1fr}
+  .gallery{grid-template-columns:repeat(2,1fr);grid-auto-rows:150px}
+  .menu-cols{columns:1}
+  .menu-nav{top:64px}
+  .fab{display:flex}
+}
+@media(max-width:560px){
+  .section{padding:52px 0}
+  .usp .container{grid-template-columns:1fr}
+  .showcase{grid-template-columns:1fr}
+  .hero__inner{padding:70px 20px 76px}
+}
