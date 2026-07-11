@@ -92,7 +92,7 @@
     <div class="nav-cta">
       <a class="btn btn--outline" href="menu.html">View Menu</a>
       <a class="btn btn--gold" href="tel:+919561929999"><svg class="i" aria-hidden="true"><use href="#ic-phone"/></svg> Call Now</a>
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">☰</button>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navLinks">☰</button>
     </div>
   </div>
 </header>
@@ -347,8 +347,8 @@
 
 <script>
   const t=document.getElementById('navToggle'),l=document.getElementById('navLinks');
-  t.addEventListener('click',()=>l.classList.toggle('open'));
-  l.addEventListener('click',e=>{if(e.target.tagName==='A')l.classList.remove('open')});
+  t.addEventListener('click',()=>{const open=l.classList.toggle('open');t.setAttribute('aria-expanded',open)});
+  l.addEventListener('click',e=>{if(e.target.tagName==='A'){l.classList.remove('open');t.setAttribute('aria-expanded','false')}});
 </script>
 </body>
 </html>

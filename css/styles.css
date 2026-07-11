@@ -20,6 +20,7 @@
   --sans:"Poppins",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
 }
 *{box-sizing:border-box}
+html,body{max-width:100%;overflow-x:hidden}
 html{scroll-behavior:smooth}
 body{
   margin:0;font-family:var(--sans);color:var(--ink);
@@ -58,7 +59,7 @@ h1,h2,h3{font-family:var(--serif);line-height:1.15;margin:0 0 .4em}
 
 /* Header */
 .site-header{position:sticky;top:0;z-index:50;background:rgba(253,246,233,.92);backdrop-filter:blur(10px);border-bottom:1px solid #eaddc3}
-.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:10px 20px;max-width:var(--maxw);margin:0 auto}
+.nav{position:relative;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:10px 20px;max-width:var(--maxw);margin:0 auto}
 .brand{display:flex;align-items:center;gap:12px}
 .brand img{width:52px;height:52px;border-radius:50%;box-shadow:var(--shadow)}
 .brand b{font-family:var(--serif);font-size:1.15rem;color:var(--maroon);display:block;line-height:1}
@@ -67,7 +68,7 @@ h1,h2,h3{font-family:var(--serif);line-height:1.15;margin:0 0 .4em}
 .nav-links a{font-weight:500;font-size:.95rem;color:var(--ink);transition:color .15s}
 .nav-links a:hover{color:var(--maroon)}
 .nav-cta{display:flex;gap:10px;align-items:center}
-.nav-toggle{display:none;background:none;border:0;font-size:1.6rem;color:var(--maroon);cursor:pointer}
+.nav-toggle{display:none;background:none;border:0;font-size:1.6rem;line-height:1;color:var(--maroon);cursor:pointer}
 
 /* Hero */
 .hero{position:relative;color:#fff;overflow:hidden}
@@ -138,7 +139,7 @@ h1,h2,h3{font-family:var(--serif);line-height:1.15;margin:0 0 .4em}
 .menu-block h2{color:var(--maroon);font-size:1.7rem;border-bottom:2px solid var(--gold-soft);padding-bottom:10px;margin-bottom:8px;display:flex;align-items:center;gap:.5em}
 .menu-cols{columns:2;column-gap:48px}
 .menu-item{break-inside:avoid;display:flex;justify-content:space-between;gap:14px;padding:9px 0;border-bottom:1px dashed #e7d9bf}
-.menu-item .name{font-weight:500}
+.menu-item .name{min-width:0;font-weight:500}
 .menu-item .name small{display:block;font-weight:400;font-size:.8rem;color:var(--ink-soft)}
 .menu-item .rate{font-weight:600;color:var(--maroon);white-space:nowrap;font-variant-numeric:tabular-nums}
 .menu-note{text-align:center;color:var(--ink-soft);font-size:.85rem;margin-top:26px;font-style:italic}
@@ -189,19 +190,47 @@ h1,h2,h3{font-family:var(--serif);line-height:1.15;margin:0 0 .4em}
 @media(max-width:900px){
   .nav-links,.nav-cta .btn--outline{display:none}
   .nav-toggle{display:block}
-  .nav-links.open{display:flex;position:absolute;top:72px;left:0;right:0;flex-direction:column;background:var(--cream);padding:18px 20px;gap:14px;border-bottom:1px solid #eaddc3}
+  .nav-links.open{display:flex;position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;background:var(--cream);padding:18px 20px;gap:14px;border-bottom:1px solid #eaddc3;box-shadow:0 12px 20px rgba(76,10,13,.1)}
+  .nav-links.open a{padding:4px 0}
   .usp .container{grid-template-columns:repeat(2,1fr)}
   .challenge .wrap,.location .wrap{grid-template-columns:1fr}
   .showcase{grid-template-columns:1fr 1fr}
   .gallery{column-count:2}
   .menu-cols{columns:1}
-  .menu-nav{top:64px}
+  .menu-nav{top:72px}
+  .footer-grid{grid-template-columns:1.4fr 1fr;gap:32px}
+  .footer-grid> :first-child{grid-column:1/-1}
   .fab{display:flex}
 }
 @media(max-width:560px){
+  .container{padding-left:16px;padding-right:16px}
+  .nav{gap:8px;padding:8px 16px}
+  .brand{gap:9px;min-width:0}
+  .brand img{width:44px;height:44px}
+  .brand b{font-size:1rem}
+  .brand span{font-size:.58rem;letter-spacing:.14em}
+  .nav-cta{gap:2px}
+  .nav-cta .btn--gold{width:42px;height:42px;padding:0;justify-content:center;font-size:0}
+  .nav-cta .btn--gold .i{width:19px;height:19px}
+  .nav-toggle{width:42px;height:42px;padding:0;font-size:1.5rem}
+  .nav-links.open{left:-16px;right:-16px;padding:16px}
+  .menu-nav{top:60px;padding:10px 0}
+  .menu-nav .container{padding-left:16px;padding-right:16px}
+  .menu-hero{padding:42px 16px 38px}
+  .menu-block h2{font-size:1.45rem}
+  .menu-item{gap:10px;padding:10px 0;font-size:.94rem}
+  .menu-item .rate{font-size:.9rem}
   .section{padding:52px 0}
   .usp .container{grid-template-columns:1fr}
   .showcase{grid-template-columns:1fr}
   .gallery{column-count:1}
   .hero__inner{padding:70px 20px 76px}
+  .site-footer{padding:44px 0 22px}
+  .footer-grid{grid-template-columns:1fr;gap:28px}
+  .footer-grid> :first-child{grid-column:auto}
+  .footer-brand{align-items:flex-start}
+  .footer-brand img{width:54px;height:54px;flex:0 0 auto}
+  .footer-bottom{margin-top:30px;padding-top:16px}
+  .fab{right:14px;bottom:14px}
+  .fab a{width:52px;height:52px}
 }
